@@ -1,7 +1,10 @@
 
-package ejercicio2;
-
-import java.util.Scanner;
+/*
+    Ejercicio 2 : Crear un programa que lea por teclado una tabla de 10 números
+    enteros y la desplace una posición hacia la derecha: el primero pasa a ser 
+    el segundo, el segundo pasa a ser el tercero y así sucesivamente. El último
+    pasa a ser el primero.
+*/
 
 /**
  * @author Aylen
@@ -9,15 +12,12 @@ import java.util.Scanner;
 
 public class Ejercicio2 {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
+        MetodosVectores vector = new MetodosVectores();
         int arreglo[] = new int[10]; // Creamos arreglos de 10 elementos enteros
         int ultimo;
         
         System.out.println("Llenar el arreglo:");
-        for(int i = 0; i < 10; i++) {
-            System.out.println(i + ". Digite un numero: ");
-            arreglo[i] = entrada.nextInt();
-        }
+        vector.llenarVector(arreglo, 10);
         
         ultimo = arreglo[9]; //Guardamos el último elemento
         
@@ -28,9 +28,7 @@ public class Ejercicio2 {
         arreglo[0] = ultimo; // Ponemos el ultimo elemento como primero
         
         System.out.println("\nEl nuevo arreglo:");
-        for(int i = 0; i < 10; i++) {
-            System.out.print(arreglo[i] + " ");
-        }
+        vector.mostrarVector(arreglo);
         
         System.out.println("\n\n");
     }
